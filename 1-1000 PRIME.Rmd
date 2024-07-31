@@ -1,0 +1,23 @@
+---
+title: "1-1000 PRIME"
+author: "La Kayla Thompson"
+date: "2024-07-31"
+output: html_document
+---
+
+```{r}
+is_prime <- function(n) {
+  if (n <= 1) {
+    return(FALSE)
+  }
+  for (i in 2:floor(sqrt(n))) {
+    if (n %% i == 0) {
+      return(FALSE)
+    }
+  }
+  return(TRUE)
+}
+
+prime_numbers <- Filter(is_prime, 1:1000)
+print(prime_numbers)
+```
